@@ -1,0 +1,124 @@
+
+#SlideItMoo_outer {
+	overflow: hidden;
+	width: 940px; 
+	height: 150px;
+	margin: 0 auto; 
+	background: none; 
+	display:block; 
+	position:relative; 
+	padding: 0;
+}
+/* create custom forward-backward buttons for this container */
+#SlideItMoo_outer .SlideItMoo_forward,
+#SlideItMoo_outer .SlideItMoo_back{ 
+	display:block; 
+	position:absolute; 
+	cursor:pointer; 
+	width: 25px; 
+	height: 150px; 
+	bottom:0px; 
+	right: 0px; 
+	background: url(../images/slideitmoo_forward.png) no-repeat center;  
+}
+#SlideItMoo_outer .SlideItMoo_back { 
+	left:0px; 
+	background: url(../images/slideitmoo_back.png) no-repeat center;  
+}
+
+/* the width is set to show the number of thumbnails that will be visible */
+#SlideItMoo_inner{ 
+	position:relative ; 
+	overflow:hidden ; 
+	width: 940px ; /* set a display width to make the slider look good in case js is disabled */
+	margin:0px auto 0px;
+	padding: 10px 0px 10px;  
+}
+/* the thumbnails container; set a width on it so everything will be fine */
+#SlideItMoo_items { 
+	display:block; 
+	position:relative; 
+}
+/* single element design */
+#SlideItMoo_items div.SlideItMoo_element { 
+	display:block; 
+	position:relative; 
+	float:left; 
+	margin: 0px 5px 0px; 
+	font-size:11px; 
+	width: 160px; 
+	height: 120px;
+	text-align:center; 
+	font-family: Verdana, Geneva, sans-serif;
+	color:#000000;
+}
+#SlideItMoo_items a { padding:0px; margin:3px 0px 3px; clear:both; display:block; background:none; padding:2px; }
+#SlideItMoo_items a img{ border:none; }
+
+
+
+/*СТИЛИ для постраничной навигации*/
+.pager{
+	list-style:none; margin: 30px auto 30px auto !important; overflow: hidden;width:565px;
+}
+.pager li{
+	float:left; margin:0 4px;
+}
+.pager li a{
+	display:block; text-align:center; background:url(../images/bgPage.gif) no-repeat center center; width:33px; font:bold 14px Tahoma; color:#fff; padding:4px 0;
+}
+.pager li a:hover{
+	color:#fff; text-decoration:none;
+}
+.pager li span{
+	display:block; text-align:center; background:url(../images/bgPage.gif) no-repeat center center; width:33px; font: 13px Tahoma; color:#fff; padding:4px 0;
+}
+.pager li.first a, .pager li.last a{
+	background:url(../images/bgPage_last.gif) no-repeat;
+	width:90px;
+	padding: 4px 0;
+}
+
+/*Стили для каталога*/
+.product-cat-main{
+	float:left; /*width:33%;*/ padding:20px 0 0 0;
+}
+.product-cat{
+	text-align:center; font:11px Arial; background:url(../images/punktir.gif) right repeat-y; padding: 0 20px; height:160px;
+}
+.product-cat img{
+	border:1px solid #ced4dd; margin:0 auto 10px auto; display:block;
+}
+.product-cat a{
+	color:#185e7f;
+}
+.product-cat a:hover{
+	text-decoration:none;
+}
+.product-cat-third{
+	text-align:center; font:11px Arial; padding: 0 20px; height:160px;
+}
+.product-cat-third img{
+	border:1px solid #ced4dd; margin:0 auto 10px auto; display:block;
+}
+.product-cat-third a{
+	color:#185e7f;
+}
+.product-cat-third a:hover{
+	text-decoration:none;
+}
+.bord-bot{
+	height:2px; width:20px;	background:url(../images/punktir.gif) bottom repeat-x; margin: 20px 20px 0;
+}
+/*Стили для каталога*/
+
+/*Стили для хлебных крошек*/
+.kat_map{
+	font:11px Arial; color:#7e8a8d; margin:0 0 20px 0;
+}
+.kat_map a{
+	color:#185e7f;
+}
+.kat_map a:hover{
+	text-decoration:none;
+}

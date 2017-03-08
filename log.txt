@@ -1,0 +1,95 @@
+Fault: 20-02-2017 22:20:51 - mes - Не правильный адресс|file - C:\OpenServer\domains\promenergo\core\controller\Route_Controller.php|line - 55|path - /template/default/JS/prelod.js|
+Fault: 20-02-2017 22:20:51 - mes - Не правильный адресс|
+Fault: 20-02-2017 22:20:51 - mes - Такой страницы не существует|file - C:\OpenServer\domains\promenergo\core\controller\Base_Controller.php|line - 38|path - Контроллер - Favicon.ico_Controller|
+Fault: 23-02-2017 15:52:12 - mes - Не правильный адресс|file - C:\OpenServer\domains\promenergo\core\controller\Route_Controller.php|line - 55|path - /template/default/JS/prelod.js|
+Fault: 23-02-2017 15:52:12 - mes - Не правильный адресс|
+Fault: 23-02-2017 15:52:16 - mes - Не правильный адресс|file - C:\OpenServer\domains\promenergo\core\controller\Route_Controller.php|line - 55|path - /template/default/JS/prelod.js|
+Fault: 23-02-2017 15:52:16 - mes - Не правильный адресс|
+Fault: 27-02-2017 17:18:38 - mes - Не правильный адресс|file - C:\OpenServer\domains\promenergo\core\controller\Route_Controller.php|line - 55|path - /catalog2/parent/|
+Fault: 27-02-2017 17:18:38 - mes - Не правильный адресс|file - C:\OpenServer\domains\promenergo\core\controller\Route_Controller.php|line - 55|path - /template/default/JS/func.js|
+Fault: 27-02-2017 17:18:38 - mes - Не правильный адресс|
+Fault: 27-02-2017 17:18:38 - mes - Такой страницы не существует|file - C:\OpenServer\domains\promenergo\core\controller\Base_Controller.php|line - 45|path - Контроллер - Favicon.ico_Controller|
+Fault: 27-02-2017 17:18:38 - mes - Такой страницы не существует|
+Fault: 27-02-2017 17:18:38 - mes - Такой страницы не существует|
+Fault: 27-02-2017 17:28:59 - mes - Ghhh_ControllerНе правильный файл для подключения|file - C:\OpenServer\domains\promenergo\core\controller\Base_Controller.php|line - 45|path - Контроллер - Ghhh_Controller|
+Fault: 06-03-2017 5:11:39 - mes - Не правильный адресс|file - C:\OpenServer\domains\promenergo\core\controller\Route_Controller.php|line - 55|path - /template/default/JS/prelod.js|
+Fault: 06-03-2017 5:11:39 - mes - Не правильный адресс|
+Fault: 06-03-2017 5:11:39 - mes - Такой страницы не существует|file - C:\OpenServer\domains\promenergo\core\controller\Base_Controller.php|line - 45|path - Контроллер - Favicon.ico_Controller|
+Fault: 06-03-2017 5:11:39 - mes - Такой страницы не существует|
+Fault: 06-03-2017 5:11:39 - mes - Такой страницы не существует|
+Fault: 06-03-2017 15:53:34 - mes - Не правильный адресс|file - C:\OpenServer\domains\promenergo\core\controller\Route_Controller.php|line - 55|path - /template/default/JS/prelod.js|
+Fault: 06-03-2017 15:53:34 - mes - Не правильный адресс|
+Fault: 06-03-2017 16:02:17 - mes - Не правильный адресс|file - C:\OpenServer\domains\promenergo\core\controller\Route_Controller.php|line - 55|path - /template/default/JS/prelod.js|
+Fault: 06-03-2017 16:02:17 - mes - Не правильный адресс|
+Fault: 06-03-2017 16:02:39 - mes - Не правильный адресс|file - C:\OpenServer\domains\promenergo\core\controller\Route_Controller.php|line - 55|path - /template/default/JS/prelod.js|
+Fault: 06-03-2017 16:02:39 - mes - Не правильный адресс|
+Fault: 06-03-2017 16:03:00 - mes - Не правильный адресс|file - C:\OpenServer\domains\promenergo\core\controller\Route_Controller.php|line - 55|path - /template/default/JS/func.js|
+Fault: 06-03-2017 16:03:00 - mes - Не правильный адресс|
+Fault: 06-03-2017 16:03:53 - mes - Не правильный адресс|file - C:\OpenServer\domains\promenergo\core\controller\Route_Controller.php|line - 55|path - /template/default/JS/prelod.js|
+Fault: 06-03-2017 16:03:53 - mes - Не правильный адресс|
+Fault: 06-03-2017 16:06:12 - mes - Не правильный адресс|file - C:\OpenServer\domains\promenergo\core\controller\Route_Controller.php|line - 55|path - /template/default/JS/prelod.js|
+Fault: 06-03-2017 16:06:12 - mes - Не правильный адресс|
+Fault: 06-03-2017 16:11:13 - mes - Не правильный адресс|file - C:\OpenServer\domains\promenergo\core\controller\Route_Controller.php|line - 55|path - /template/default/JS/prelod.js|
+Fault: 06-03-2017 16:11:13 - mes - Не правильный адресс|
+Fault: 06-03-2017 16:13:47 - mes - Не правильный адресс|file - C:\OpenServer\domains\promenergo\core\controller\Route_Controller.php|line - 55|path - /core/Cap_Controller.php|
+Fault: 06-03-2017 16:26:48 - mes - Не правильный адресс|file - C:\OpenServer\domains\promenergo\core\controller\Route_Controller.php|line - 55|path - /template/default/JS/prelod.js|
+Fault: 06-03-2017 16:26:48 - mes - Не правильный адресс|
+Fault: 06-03-2017 16:27:32 - mes - Не правильный адресс|file - C:\OpenServer\domains\promenergo\core\controller\Route_Controller.php|line - 55|path - /template/default/JS/prelod.js|
+Fault: 06-03-2017 16:27:32 - mes - Не правильный адресс|
+Fault: 06-03-2017 16:27:57 - mes - Не правильный адресс|file - C:\OpenServer\domains\promenergo\core\controller\Route_Controller.php|line - 55|path - /template/default/JS/prelod.js|
+Fault: 06-03-2017 16:27:57 - mes - Не правильный адресс|
+Fault: 06-03-2017 16:28:23 - mes - Не правильный адресс|file - C:\OpenServer\domains\promenergo\core\controller\Route_Controller.php|line - 55|path - /template/default/JS/prelod.js|
+Fault: 06-03-2017 16:28:23 - mes - Не правильный адресс|
+Fault: 06-03-2017 16:28:47 - mes - Не правильный адресс|file - C:\OpenServer\domains\promenergo\core\controller\Route_Controller.php|line - 55|path - /template/default/JS/func.js|
+Fault: 06-03-2017 16:28:47 - mes - Не правильный адресс|
+Fault: 06-03-2017 16:31:14 - mes - Не правильный адресс|file - C:\OpenServer\domains\promenergo\core\controller\Route_Controller.php|line - 55|path - /template/default/JS/func.js|
+Fault: 06-03-2017 16:31:14 - mes - Не правильный адресс|
+Fault: 06-03-2017 16:33:43 - mes - Не правильный адресс|file - C:\OpenServer\domains\promenergo\core\controller\Route_Controller.php|line - 55|path - /template/default/JS/prelod.js|
+Fault: 06-03-2017 16:33:43 - mes - Не правильный адресс|
+Fault: 06-03-2017 16:34:41 - mes - Не правильный адресс|file - C:\OpenServer\domains\promenergo\core\controller\Route_Controller.php|line - 55|path - /template/default/JS/prelod.js|
+Fault: 06-03-2017 16:34:41 - mes - Не правильный адресс|
+Fault: 06-03-2017 16:40:36 - mes - Не правильный адресс|file - C:\OpenServer\domains\promenergo\core\controller\Route_Controller.php|line - 55|path - /template/default/JS/prelod.js|
+Fault: 06-03-2017 16:40:36 - mes - Не правильный адресс|
+Fault: 06-03-2017 16:40:55 - mes - Не правильный адресс|file - C:\OpenServer\domains\promenergo\core\controller\Route_Controller.php|line - 55|path - /template/default/JS/func.js|
+Fault: 06-03-2017 16:40:55 - mes - Не правильный адресс|
+Fault: 06-03-2017 16:41:12 - mes - Не правильный адресс|file - C:\OpenServer\domains\promenergo\core\controller\Route_Controller.php|line - 55|path - /template/default/JS/prelod.js|
+Fault: 06-03-2017 16:41:12 - mes - Не правильный адресс|
+Fault: 06-03-2017 16:41:21 - mes - Не правильный адресс|file - C:\OpenServer\domains\promenergo\core\controller\Route_Controller.php|line - 55|path - /template/default/JS/prelod.js|
+Fault: 06-03-2017 16:41:21 - mes - Не правильный адресс|
+Fault: 06-03-2017 16:42:16 - mes - Не правильный адресс|file - C:\OpenServer\domains\promenergo\core\controller\Route_Controller.php|line - 55|path - /template/default/JS/prelod.js|
+Fault: 06-03-2017 16:42:16 - mes - Не правильный адресс|
+Fault: 06-03-2017 16:43:53 - mes - Не правильный адресс|file - C:\OpenServer\domains\promenergo\core\controller\Route_Controller.php|line - 55|path - /template/default/JS/prelod.js|
+Fault: 06-03-2017 16:43:53 - mes - Не правильный адресс|
+Fault: 06-03-2017 16:44:34 - mes - Не правильный адресс|file - C:\OpenServer\domains\promenergo\core\controller\Route_Controller.php|line - 55|path - /template/default/JS/prelod.js|
+Fault: 06-03-2017 16:44:34 - mes - Не правильный адресс|
+Fault: 06-03-2017 16:44:58 - mes - Не правильный адресс|file - C:\OpenServer\domains\promenergo\core\controller\Route_Controller.php|line - 55|path - /template/default/JS/prelod.js|
+Fault: 06-03-2017 16:44:58 - mes - Не правильный адресс|
+Fault: 06-03-2017 16:57:27 - mes - Не правильный адресс|file - C:\OpenServer\domains\promenergo\core\controller\Route_Controller.php|line - 55|path - /template/default/JS/prelod.js|
+Fault: 06-03-2017 16:57:27 - mes - Не правильный адресс|
+Fault: 06-03-2017 16:58:02 - mes - Не правильный адресс|file - C:\OpenServer\domains\promenergo\core\controller\Route_Controller.php|line - 55|path - /template/default/JS/prelod.js|
+Fault: 06-03-2017 16:58:02 - mes - Не правильный адресс|
+Fault: 06-03-2017 20:44:02 - mes - Такой страницы не существует|file - C:\OpenServer\domains\testovoe\core\controller\Base_Controller.php|line - 45|path - Контроллер - Favicon.ico_Controller|
+Fault: 06-03-2017 20:44:02 - mes - Такой страницы не существует|
+Fault: 06-03-2017 20:44:02 - mes - Такой страницы не существует|
+Fault: 06-03-2017 21:27:43 - Ошибка авторизации польз-я |Доступ запрещен
+Fault: 07-03-2017 7:55:18 - Ошибка авторизации польз-я |Закончилось время сессии
+Fault: 07-03-2017 13:01:03 - mes - Такой страницы не существует|file - C:\OpenServer\domains\testovoenina\core\controller\Base_Controller.php|line - 45|path - Контроллер - Favicon.ico_Controller|
+Fault: 07-03-2017 13:09:50 - mes - Такой страницы не существует|file - C:\OpenServer\domains\testovoenina\core\controller\Base_Controller.php|line - 45|path - Контроллер - Favicon.ico_Controller|
+Fault: 07-03-2017 13:10:50 - mes - Такой страницы не существует|file - C:\OpenServer\domains\testovoenina\core\controller\Base_Controller.php|line - 45|path - Контроллер - Favicon.ico_Controller|
+Fault: 07-03-2017 13:17:30 - mes - Такой страницы не существует|file - C:\OpenServer\domains\testovoenina\core\controller\Base_Controller.php|line - 45|path - Контроллер - Favicon.ico_Controller|
+Fault: 07-03-2017 13:46:51 - Ошибка авторизации польз-я |Доступ запрещен
+Fault: 07-03-2017 13:55:13 - mes - Такой страницы не существует|file - C:\OpenServer\domains\testovoe1\core\controller\Base_Controller.php|line - 45|path - Контроллер - Favicon.ico_Controller|
+Fault: 07-03-2017 13:55:13 - mes - Такой страницы не существует|
+Fault: 07-03-2017 13:55:13 - mes - Такой страницы не существует|
+Fault: 07-03-2017 17:29:00 - Ошибка авторизации польз-я |Доступ запрещен
+Fault: 08-03-2017 5:38:07 - Ошибка авторизации польз-я |Закончилось время сессии
+Fault: 08-03-2017 8:23:55 - mes - Данного шаблона нет|file - C:\OpenServer\domains\testovoe1\core\controller\Base_Controller.php|line - 129|path - Контроллер - Template_Controller|
+Fault: 08-03-2017 8:24:02 - mes - Данного шаблона нет|file - C:\OpenServer\domains\testovoe1\core\controller\Base_Controller.php|line - 129|
+Fault: 08-03-2017 8:24:54 - mes - Данного шаблона нет|
+Fault: 08-03-2017 8:55:46 - mes - Ошибка запроса0||file - C:\OpenServer\domains\testovoe1\core\model\Model_Driver.php|line - 102|path - /images/d05dd44a30.jpg|
+Fault: 08-03-2017 8:56:01 - mes - Ошибка запроса0||file - C:\OpenServer\domains\testovoe1\core\model\Model_Driver.php|line - 102|
+Fault: 08-03-2017 8:57:34 - mes - Ошибка запроса0||
+Fault: 08-03-2017 8:57:34 - mes - Ошибка запроса0||
+Fault: 08-03-2017 8:57:35 - mes - Ошибка запроса0||
+Fault: 08-03-2017 9:07:27 - Ошибка авторизации польз-я |Доступ запрещен
+
