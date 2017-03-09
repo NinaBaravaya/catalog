@@ -157,7 +157,8 @@ class Model_Driver
         }
 
         $sql = rtrim($sql, ',') . ")";
-
+//echo $sql;
+       // exit();
         $result = $this->ins_db->query($sql);
 
         if (!$result) {

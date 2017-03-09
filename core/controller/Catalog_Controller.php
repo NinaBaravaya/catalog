@@ -11,9 +11,9 @@ class Catalog_Controller extends Base{
   protected function input($param = array())//параметры для навигации и не только пост данные
   {
       parent::input();
-      $this->home_page = TRUE;
+      //$this->home_page = TRUE;
       $this->title .= "Каталог";
-      $this->need_right_side = FALSE;//скрываем right_bar.php
+      //$this->need_right_side = FALSE;//скрываем right_bar.php
 
 
       if(isset($param['brand'])){//код для принятия параметра brand/2

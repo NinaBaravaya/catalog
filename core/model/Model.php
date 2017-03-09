@@ -37,7 +37,7 @@ class Model
 
     }
 
-    public function get_news()
+ /*   public function get_news()
     {//мтеод публичный т.к. доступ к нему должен быть открыт из других классов
         //$result - в переменной хнаится массив новостей, выбран из бд
         //$this->ins_driver - свойтсво, в котором хранится объект класса Model_Driver
@@ -83,7 +83,7 @@ class Model
         }
         return $result;
         // echo $result;
-    }
+    }*/
 
     public function get_catalog_type()
     {
@@ -113,7 +113,7 @@ class Model
         return $arr;
     }
 
-    public function get_home_page()
+ /*   public function get_home_page()
     {//метод вернет главную страницу сайта
         $result = $this->ins_driver->select(
             array('page_id', 'title', 'text', 'keywords', 'description'),
@@ -177,7 +177,7 @@ class Model
             array('type' => 'contacts')
         );
         return $result[0];
-    }
+    }*/
 
 
     public function get_child($id)
@@ -256,7 +256,7 @@ class Model
         return $result[0];
     }
 
-    public function get_pricelist()
+  /*  public function get_pricelist()
     {//методв вернет массив данных для вывода в прайс-листе
 //так как метод будет формировать сложный sql запрос, то бе
         $sql = "SELECT brands.brand_id,brands.brand_name,brands.parent_id,
@@ -324,9 +324,9 @@ class Model
         //переформируем массив
 
         return $myrow;
-    }
+    }*/
 
-    public function add_page($title, $text, $position, $keywords, $description)
+  /*  public function add_page($title, $text, $position, $keywords, $description)
     {
         //метод добавляет страницу из админки в модель
         $result = $this->ins_driver->insert(
@@ -408,7 +408,7 @@ class Model
             array('news_id' => $id)
         );
         return $result;
-    }
+    }*/
 
     public function get_parent_brands()
     {
@@ -430,7 +430,7 @@ class Model
         return $result;
     }
 
-    public function add_new_type($type_name)
+/*    public function add_new_type($type_name)
     {//название типа (товара), который ввел пользователь
         //данный мтеод должен вставить тип в бд и вернуть id данного типа
         $result = $this->ins_driver->insert(//обращаемся к объекту класса Model_Driver
@@ -440,11 +440,11 @@ class Model
             TRUE//вернет id вставленной записи
         );
         return $result;
-    }
+    }*/
 
     public function add_goods($id, $title, $anons, $text,
                               $img,
-                              $type,
+
                               $publish,
                               $price,
                               $keywords,
@@ -452,8 +452,8 @@ class Model
     {
         $result = $this->ins_driver->insert(
             'tovar',
-            array('title', 'anons', 'text', 'img', 'brand_id', 'type_id', 'publish', 'price', 'keywords', 'description'),
-            array($title, $anons, $text, $img, $id, $type, $publish, $price, $keywords, $description)
+            array('title', 'anons', 'text', 'img', 'brand_id',  'publish', 'price', 'keywords', 'description'),
+            array($title, $anons, $text, $img, $id, $publish, $price, $keywords, $description)
         );
         return $result;
 
@@ -463,7 +463,7 @@ class Model
     {
         $result = $this->ins_driver->select(
             array('tovar_id', 'title', 'text', 'img', 'keywords', 'description', 'anons',
-                'brand_id', 'type_id', 'publish', 'price'),
+                'brand_id', 'publish', 'price'),
             'tovar',
             array('tovar_id' => $id)
         );
@@ -471,21 +471,21 @@ class Model
     }
 
 
-    public function edit_goods($id, $title, $anons, $text, $img, $type, $publish, $price, $category, $keywords, $description)
+    public function edit_goods($id, $title, $anons, $text, $img, $publish, $price, $category, $keywords, $description)
     {
         if ($img) {
             $result = $this->ins_driver->update(
                 'tovar',
-                array('title', 'anons', 'text', 'img', 'type_id', 'publish', 'price', 'brand_id', 'keywords', 'description'),
-                array($title, $anons, $text, $img, $type, $publish, $price, $category, $keywords, $description),
+                array('title', 'anons', 'text', 'img', 'publish', 'price', 'brand_id', 'keywords', 'description'),
+                array($title, $anons, $text, $img, $publish, $price, $category, $keywords, $description),
                 array('tovar_id' => $id)
             );
 
         } else {
             $result = $this->ins_driver->update(
                 'tovar',
-                array('title', 'anons', 'text', 'type_id', 'publish', 'price', 'brand_id', 'keywords', 'description'),
-                array($title, $anons, $text, $type, $publish, $price, $category, $keywords, $description),
+                array('title', 'anons', 'text', 'publish', 'price', 'brand_id', 'keywords', 'description'),
+                array($title, $anons, $text, $publish, $price, $category, $keywords, $description),
                 array('tovar_id' => $id)
             );
         }
@@ -548,7 +548,7 @@ class Model
     }//т.е.после того как удалили категорию установим товарам это йкатегорий brand_id = 0
 
     //теперь нам нужно изменит ьзначение поля Brand_id на 0 у всех товаров, у которых была удалена категория
-    public function get_type_adm($id)
+   /* public function get_type_adm($id)
     {//массив данных по выброному типу
         $result = $this->ins_driver->select(
             array('type_id', 'type_name', 'in_header'),
@@ -572,8 +572,8 @@ class Model
             array('type_id' => $id)
         );
         return $result;
-    }
-    //////////////метод обновит 2 записи - для главной страницы и стра-ы показа контактной информации
+    }*/
+   /* //////////////метод обновит 2 записи - для главной страницы и стра-ы показа контактной информации
     public function update_page_options($option,$new_id,$old = FALSE){//тип, который мы должны установить
 //id стр-ы, кот выбрал пользователь
         // id прошлой страницы, если не назначена гл стр-а
@@ -600,10 +600,7 @@ class Model
         }
 
         return TRUE;
-    }
-
-
-
+    }*/
 
 }
 

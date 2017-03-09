@@ -122,3 +122,7 @@
 .kat_map a:hover{
 	text-decoration:none;
 }
+/*Стили для страницы авторизации*/
+.autoriz{
+	padding:40px 30px;
+}

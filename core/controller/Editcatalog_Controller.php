@@ -3,12 +3,12 @@ class Editcatalog_Controller extends Base_Admin {
 
     protected $option = 'view';
     protected $brands;
-    protected $id;
+    protected $id;//идентификатор категории parent либо brands
     protected $catalog;
     protected $navigation;
     protected $message;
-    protected $type;
-    protected $type_cat;
+    protected $type;//тип категории: brand либо parent
+    protected $type_cat;//массив всех типов товароа
     protected $tovar;//массив дан по выбр товару
     protected $tovar_id;//id товара
     protected $type_img;//тии изображения
@@ -29,9 +29,11 @@ class Editcatalog_Controller extends Base_Admin {
         }
 
         if(isset($param['brand'])) {
+
             $this->id = $this->clear_int($param['brand']);
             $this->type = 'brand';
-
+            //print_r($this->type);
+            //exit();
             $pager = new Pager(
                 $page,
                 'tovar',
@@ -83,16 +85,20 @@ class Editcatalog_Controller extends Base_Admin {
         }
 
        if($param['option'] == 'edit') {
+
             $this->type_cat = $this->ob_m->get_catalog_type();
             if($param['tovar']) {//проверяем пришел ли id товара
                 $this->tovar_id = $this->clear_int($param['tovar']);
                 $this->tovar = $this->ob_m->get_tovar_adm($this->tovar_id);
                 $this->option = 'edit';
 
-                //print_r($this->tovar);
+
+                //print_r($this->tovar);//массив данных по редактируемому товару
+                //print_r($this->type_cat);//массив всех категорий
+               // exit();
             }
         }
-
+/////////Действия//////////////
         if($param['option'] == 'delete') {//УДАЛЕНИЕ ТОВАРА
             if($param['tovar']) {//есть id товара
                 $this->tovar_id = $this->clear_int($param['tovar']);
@@ -118,13 +124,14 @@ class Editcatalog_Controller extends Base_Admin {
         }
 
         if($this->is_post()) {
-
+//print_r($_POST);
+            //exit();
             $id = $this->clear_int($_POST['id']);
             $title = $_POST['title'];
             $anons = $_POST['anons'];
             $text = $_POST['text'];
-            $type = $_POST['type'];
-            $new_type = $_POST['new_type'];
+           //$type = $_POST['type'];//не относится к сво-ву protected $type
+            //$new_type = $_POST['new_type'];
             $publish = $_POST['publish'];
             $price = $this->clear_int($_POST['price']);
             $keywords = $_POST['keywords'];
@@ -179,16 +186,16 @@ class Editcatalog_Controller extends Base_Admin {
 
                 }
                 if($this->option == 'add') {
-                    if(!empty($new_type)) {
+                   /* if(!empty($new_type)) {
                         $type = $this->ob_m->add_new_type($new_type);
-                    }
+                    }*/
                     $result = $this->ob_m->add_goods(
                         $this->id,
                         $title,
                         $anons,
                         $text,
                         $img,
-                        $type,
+                       // $type,
                         $publish,
                         $price,
                         $keywords,
@@ -205,9 +212,9 @@ class Editcatalog_Controller extends Base_Admin {
                 }
 
                 if($this->option = 'edit') {
-                    if(!empty($new_type)) {
-                        $type = $this->ob_m->add_new_type($new_type);//метод добавит новый тип в бд
-                    }
+                   /* if(!empty($new_type)) {
+                        $type = $this->ob_m->add_new_type($new_type);//метод добавит новый тип в бд и вернет id добавленного типа
+                    }*/
 
                     if($img == NOIMAGE) {
                         $img = FALSE;//то ничего записывать в поле не будем
@@ -218,7 +225,7 @@ class Editcatalog_Controller extends Base_Admin {
                         $anons,
                         $text,
                         $img,
-                        $type,
+                       // $type,
                         $publish,
                         $price,
                         $category,
@@ -258,8 +265,8 @@ class Editcatalog_Controller extends Base_Admin {
             'navigation'=>$this->navigation,
             'previous'=>$previous,
             'mes'=>$this->message,
-            'type_cat' => $this->type_cat,
-            'tovar' => $this->tovar
+            'type_cat' => $this->type_cat,//чтобы заполнить список типов
+            'tovar' => $this->tovar//подставить данные в поля при редактировании
         ));
 
         $this->page = parent::output();

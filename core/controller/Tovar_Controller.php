@@ -7,7 +7,7 @@ class Tovar_Controller extends Base{
     protected function input($param = array())//параметры запроса 'id/1'
     {
         parent::input();//вызываем родительский метод класса Base
-
+        $this->home_page = TRUE;
         //чтобы получит ьданные по товару, нужно получить id
         if(isset($param['id'])){
         $id = $this->clear_int($param['id']);//очистим дан чис типа

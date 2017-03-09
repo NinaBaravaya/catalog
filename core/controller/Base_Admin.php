@@ -15,7 +15,7 @@ abstract class Base_Admin extends Base_Controller{
             // то вызываем метод >check_auth(), чтобы проверить авторизировался ли пользователь
             $this->check_auth();
         }
-       $this->title .= "ПромЭнегроСтрой |";
+       $this->title .= "Каталог бытовой техники |";
         foreach($this->styles_admin as $style){
             $this->style[] = SITE_URL.VIEW.'admin/'.$style;
         }

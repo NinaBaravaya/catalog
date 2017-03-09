@@ -56,7 +56,7 @@ protected function input($param = array())
                 $this->ob_us->set();//устанавливает куки (записывает определ строку в файл куки)
                 ///////////////////////
                //метод будет записывать в куки строку определенного формата
-               header("Location:".SITE_URL.'admin');
+               header("Location:".SITE_URL.'editcatalog');
                 exit();
 
             }catch(AuthException $e){//перехват исключ

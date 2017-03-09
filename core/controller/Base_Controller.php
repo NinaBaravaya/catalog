@@ -224,9 +224,6 @@ abstract class Base_Controller
       // echo  $img_mini_width."|".$img_mini_height;//57|175
        // exit();
 
-
-
-
         $img_dest_id = imageCreateTrueColor($img_mini_width,$img_mini_height);
 
         $result = imageCopyResampled(
