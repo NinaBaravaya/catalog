@@ -175,8 +175,8 @@ abstract class Base_Controller
             $this->error .= $e->getMessage();//получаем сооб об ошибках
 
             $this->write_error($this->error);//метод записи ошибок
-            header("Location:" . SITE_URL . "login");//переадресация на страницу авторизации
-            exit();
+           // header("Location:" . SITE_URL . "editcatalog");//переадресация на страницу авторизации
+          //  exit();
         }
     }
 

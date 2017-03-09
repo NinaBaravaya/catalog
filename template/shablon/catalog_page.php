@@ -43,7 +43,7 @@
                     <?=$item['title']?>
                 </a></h3>
             </div>
-            <div class="bord-bot"></div>
+
         </div>
         <? $i++;?>
         <? endforeach;?>

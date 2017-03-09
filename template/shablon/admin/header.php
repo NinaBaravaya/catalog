@@ -18,10 +18,18 @@
 <title><?=$title;?></title>
 </head>
 
-<body>
-<div class="karkas-main">
-<div class="karkas">
-	<div class="main">
-		<div class="header">
-			<a href="<?=SITE_URL;?>"><img src="<?=SITE_URL.VIEW.'admin/';?>images/logo.png" class="logo" alt="Промстрой энерго" /></a>
-		</div>
+
+
+<body id="home">
+<div id="templatemo_wrapper">
+	<div id="templatemo_header">
+
+		<div id="site_title"><h1><a href="<?=SITE_URL;?>">бытовой техники</a></h1></div>
+		<ul class="adm_menu">
+			<li><a href="<?=SITE_URL;?>editcategory">Новая категория</a></li>
+			<li><a href="<?=SITE_URL;?>editcatalog">Редактирование каталога</a></li>
+			<li><a href="<?=SITE_URL?>login/logout/1">Выйти из админ.панели</a></li>
+		</ul>
+
+		</div><!-- END of header -->
+

@@ -1,8 +1,8 @@
-<td class="content">
+<div id="content">
 	<? if($option == 'view') :?>
-		<h1>
+		<h2>
 			Редактирование каталога
-		</h1>
+		</h2>
 		<p><?=$mes;?></p>
 		<? if($category) :?>
 			<div class="button-catalog-adm">
@@ -12,9 +12,24 @@
 			</div>
 		<? endif;?>
 		<? if($goods) :?>
+
+
+			<?
+			$i = 1;
+			?>
+
+
 			<? foreach($goods as $item) :?>
-				<div class="adm-product-cat-main">
-					<div class="adm-product-cat">
+
+				<div class="product-cat-main">
+					<? if($i == 3) :?>
+					<div class="col col_14 product_gallery no_margin_right">
+						<? $i = 0;?>
+						<? else :?>
+						<div class="col col_14 product_gallery">
+							<? endif;?>
+
+
 						<p><?=$item['title']?></p>
 						<img src="<?=SITE_URL.UPLOAD_DIR.$item['img'];?>" alt="<?=$ietm['title']?>" />
 						<p>
@@ -25,11 +40,15 @@
 								Удалить
 							</a>
 						</p>
+
+
+
 					</div>
-					<div class="adm-bord-bot"></div>
+
 				</div>
+				<? $i++;?>
 			<? endforeach;?>
-			<div style="clear:both"></div>
+
 
 			<? if($navigation) :?>
 				<ul class="pager">
@@ -111,21 +130,6 @@
 			<p><span>Описание: &nbsp;
 						</span><input class="txt-zag" type="text" name="description"></p>
 
-			<!--<p><span>Выберите тип товара:</span></p>
-			<select name="type">
-				<?/* if($type_cat) :*/?>
-				<?/* foreach($type_cat as $item) :*/?>
-					<option value="<?/*=$item['type_id']*/?>"><?/*=$item['type_name']*/?></option>
-				<?/* endforeach;*/?>
-			</select>
-			<?/* else :*/?>
-				<p>типов пока нет</p>
-			<?/* endif; */?>
-
-			<p><span>Или создайте новый: &nbsp;</span>
-				<input class="txt-zag" type="text" name="new_type"></p>-->
-
-
 			<p>Публиковать товар:<br />
 				<input type="radio" name="publish" value="1" checked>Да
 				<input type="radio" name="publish" value="0">Нет</p>
@@ -163,25 +167,6 @@
 						</span><input class="txt-zag" type="text" name="keywords" value="<?=$tovar['keywords']?>"></p>
 			<p><span>Описание: &nbsp;
 						</span><input class="txt-zag" type="text" value="<?=$tovar['description']?>" name="description"></p>
-			<!--<p><span>Выберите тип товара:</span></p>
-			<select name="type">
-				<?/* if($type_cat) :*/?>
-				<?/* foreach($type_cat as $item) :*/?>
-					<?/* if($item['type_id'] == $tovar['type_id']) :*/?>
-						<option selected value="<?/*=$item['type_id']*/?>"><?/*=$item['type_name']*/?></option>
-					<?/* else :*/?>
-						<option value="<?/*=$item['type_id']*/?>"><?/*=$item['type_name']*/?></option>
-					<?/* endif;*/?>
-
-				<?/* endforeach;*/?>
-			</select>
-			<?/* else :*/?>
-				<p>типов пока нет</p>
-			<?/* endif; */?>
-
-			<p><span>Или создайте новый: &nbsp;</span>
-				<input class="txt-zag" type="text" name="new_type"></p>
--->
 			<p><span>Выберите категорию:</span></p>
 			<? if($brands) :?>
 				<select name="category">
@@ -230,45 +215,5 @@
 		</form>
 		<!--FORM ADD-->
 	<? endif;?>
-</td>
+</div>
 
-<td class="rightbar-adm">
-	<h1>
-		Категории
-	</h1>
-
-	<p><a href="<?=SITE_URL;?>editcategory"><strong>Новая категория</strong></a></p>
-	<br />
-	<? if($brands) :?>
-		<ul>
-			<? foreach($brands as $key=>$item) :?>
-				<? if($item['next_lvl']) :?>
-					<li>
-						<a href="<?=SITE_URL;?>editcatalog/parent/<?=$key;?>">
-							<?=$item[0];?>
-						</a>
-						<ul>
-							<? foreach($item['next_lvl'] as $k=>$val) :?>
-								<li>
-									<a href="<?=SITE_URL;?>editcatalog/brand/<?=$k?>">
-										<?=$val;?>
-									</a>
-								</li>
-							<? endforeach;?>
-						</ul>
-					</li>
-				<? else :?>
-					<li>
-						<a href="<?=SITE_URL;?>editcatalog/brand/<?=$key;?>">
-							<?=$item[0];?>
-						</a>
-					</li>
-				<? endif;?>
-			<? endforeach;?>
-			<li><a href="<?=SITE_URL;?>editcatalog/brand/0">Без категории</a></li>
-		</ul>
-	<? else :?>
-		<p>Категорий нет</p>
-	<? endif;?>
-
-</td>

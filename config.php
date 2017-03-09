@@ -11,7 +11,7 @@ define('LIB','lib');//задаем путь к шаблону
 define('SITE_URL','/');//константа хранит адрес сайта, т.е.путь к папке, где лежит индексный файл сайта
 //единая точка входа
 
-define('QUANTITY',6);//кол-во товаров для постраничной навигации
+define('QUANTITY',12);//кол-во товаров для постраничной навигации
 
 define('QUANTITY_LINKS',3);//число ссылок по обеим сторонам от текущей страницы
 
@@ -47,25 +47,18 @@ $conf = array(
         'css/error.css',
     ),
     'scripts' => array(
-        'JS/jquery-1.7.2.min.js',
-        'JS/jquery-ui-1.8.20.custom.min.js',
-        'JS/jquery.cookie.js',
-        'JS/js.js',
-        'JS/script.js',
+        'js/jquery-1.7.2.min.js',
+        'js/jquery-ui-1.8.20.custom.min.js',
+        'js/jquery.cookie.js',
+        'js/js.js',
+        'js/script.js',
     ),
     'styles_admin' => array(
-        'style.css'
+        'css/templatemo_style.css',
+        'css/style.css'
     ),
     'scripts_admin' => array(
-        'JS/func.js',
-        'JS/jquery-1.7.2.min.js',
-        'JS/jquery-ui-1.8.20.custom.min.js',
-        'JS/jquery.cookie.js',
-        'JS/js.js',
-        'JS/prelod.js',
-        'JS/script.js',
-
-        'JS/tiny_mce/tiny_mce.js',
-        'JS/tiny_script.js'
+        'js/tiny_mce/tiny_mce.js',
+        'js/tiny_script.js'
     ),
 );//будем программно(автоматически ) подключать скрипты js

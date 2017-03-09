@@ -2,13 +2,13 @@
 class Editcatalog_Controller extends Base_Admin {
 
     protected $option = 'view';
-    protected $brands;
+    //protected $brands;
     protected $id;//идентификатор категории parent либо brands
     protected $catalog;
     protected $navigation;
     protected $message;
     protected $type;//тип категории: brand либо parent
-    protected $type_cat;//массив всех типов товароа
+   // protected $type_cat;//массив всех типов товароа
     protected $tovar;//массив дан по выбр товару
     protected $tovar_id;//id товара
     protected $type_img;//тии изображения
@@ -16,7 +16,7 @@ class Editcatalog_Controller extends Base_Admin {
     protected function input($param = array()) {
         parent::input();
         $this->title .= " Админка - каталог";
-        $this->brands = $this->ob_m->get_catalog_brands();
+        //$this->brands = $this->ob_m->get_catalog_brands();
 
         if(isset($param['page'])) {
             $page = $this->clear_int($param['page']);
@@ -77,7 +77,7 @@ class Editcatalog_Controller extends Base_Admin {
 
         if($param['option'] == 'add') {
             $this->option = 'add';
-            $this->type_cat = $this->ob_m->get_catalog_type();
+            //$this->type_cat = $this->ob_m->get_catalog_type();
 
             if($param['id']) {//идентификатор категории
                 $this->id = $this->clear_int($param['id']);
@@ -86,7 +86,7 @@ class Editcatalog_Controller extends Base_Admin {
 
        if($param['option'] == 'edit') {
 
-            $this->type_cat = $this->ob_m->get_catalog_type();
+           // $this->type_cat = $this->ob_m->get_catalog_type();
             if($param['tovar']) {//проверяем пришел ли id товара
                 $this->tovar_id = $this->clear_int($param['tovar']);
                 $this->tovar = $this->ob_m->get_tovar_adm($this->tovar_id);
@@ -130,8 +130,7 @@ class Editcatalog_Controller extends Base_Admin {
             $title = $_POST['title'];
             $anons = $_POST['anons'];
             $text = $_POST['text'];
-           //$type = $_POST['type'];//не относится к сво-ву protected $type
-            //$new_type = $_POST['new_type'];
+
             $publish = $_POST['publish'];
             $price = $this->clear_int($_POST['price']);
             $keywords = $_POST['keywords'];
@@ -186,16 +185,14 @@ class Editcatalog_Controller extends Base_Admin {
 
                 }
                 if($this->option == 'add') {
-                   /* if(!empty($new_type)) {
-                        $type = $this->ob_m->add_new_type($new_type);
-                    }*/
+
                     $result = $this->ob_m->add_goods(
                         $this->id,
                         $title,
                         $anons,
                         $text,
                         $img,
-                       // $type,
+
                         $publish,
                         $price,
                         $keywords,
@@ -212,9 +209,6 @@ class Editcatalog_Controller extends Base_Admin {
                 }
 
                 if($this->option = 'edit') {
-                   /* if(!empty($new_type)) {
-                        $type = $this->ob_m->add_new_type($new_type);//метод добавит новый тип в бд и вернет id добавленного типа
-                    }*/
 
                     if($img == NOIMAGE) {
                         $img = FALSE;//то ничего записывать в поле не будем
@@ -225,7 +219,7 @@ class Editcatalog_Controller extends Base_Admin {
                         $anons,
                         $text,
                         $img,
-                       // $type,
+
                         $publish,
                         $price,
                         $category,
@@ -259,13 +253,13 @@ class Editcatalog_Controller extends Base_Admin {
 
         $this->content = $this->render(VIEW.'admin/edit_catalog',array(
             'option' => $this->option,
-            'brands' => $this->brands,
+            //'brands' => $this->brands,
             'category'=>$this->id,
             'goods' => $this->catalog,
             'navigation'=>$this->navigation,
             'previous'=>$previous,
             'mes'=>$this->message,
-            'type_cat' => $this->type_cat,//чтобы заполнить список типов
+           // 'type_cat' => $this->type_cat,//чтобы заполнить список типов
             'tovar' => $this->tovar//подставить данные в поля при редактировании
         ));
 

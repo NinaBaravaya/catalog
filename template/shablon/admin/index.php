@@ -1,12 +1,10 @@
 <?=$header;?>
 
-<table class="content-main" cellpadding="0" cellspacing="0">
-	<tr>
-		<?=$left_bar;?>
-		<?=$content;?>
-	
-	 </tr>
-</table>
+<div id="templatemo_main">
+	<?=$left_bar;?>
+	<?=$content;?>
+	<div class="cleaner"></div>
+</div> <!-- END of main -->
 
-<?=$footer;?>
-				
+
+<?=$footer?>
