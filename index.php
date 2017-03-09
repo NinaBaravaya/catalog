@@ -11,8 +11,8 @@ session_start();
 
 require "config.php";
 
-
-set_include_path(get_include_path()
+//echo get_include_path();
+set_include_path(get_include_path()//чтобы не прописать полный путь к подключаемому файлу от корня сайта
     .PATH_SEPARATOR.CONTROLLER
     .PATH_SEPARATOR.MODEL
     .PATH_SEPARATOR.LIB

@@ -60,6 +60,7 @@
 	<h1>
 		Категории
 	</h1>
+	<p><a href="<?=SITE_URL;?>editcategory"><strong>Новая категория</strong></a></p>
 	<? if($brands) :?>
 		<ul>
 			<? foreach($brands as $key=>$item) :?>
@@ -91,7 +92,5 @@
 	<? else :?>
 		<p>Категорий нет</p>
 	<? endif;?>
-	<br />
-	<p><a href="<?=SITE_URL;?>editcategory"><strong>Новая категория</strong></a></p>
-	<p><a href=""><strong>Редактирование типов</strong></a></p>
+
 </td>

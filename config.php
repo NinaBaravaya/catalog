@@ -43,9 +43,7 @@ define("VARNING_TIME",3000);
 $conf = array(
     'styles' => array(
         'css/templatemo_style.css',
-        'css/ddsmoothmenu.css',
         'css/styles.css',
-        'css/lightbox.css',
         'css/error.css',
     ),
     'scripts' => array(

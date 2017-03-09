@@ -12,9 +12,11 @@ abstract class Base extends Base_Controller{
     protected $right_bar;//для хранения правого блока
     protected $footer;
    // protected $need_right_side = FALSE;//нужна ли правая часть сайта
-    protected $home_page = FALSE;//признак того, что страница главная
+   // protected $home_page = FALSE;//признак того, что страница главная
 
-    protected $news,$pages,$catalog_type,$catalog_brands,$keywords,$description;//свойство хранит массив новостей, котор. выбрали из бд
+    //protected $news,$pages,$catalog_type;
+
+    protected $catalog_brands,$keywords,$description;//свойство хранит массив новостей, котор. выбрали из бд
     //$pages свойство хранит массив страниц, котор. выбрали из бд
 
 
@@ -33,17 +35,17 @@ abstract class Base extends Base_Controller{
 
         //получение Object Model
         $this->ob_m = Model::get_instance();
-        $this->news = $this->ob_m->get_news();
-        $this->pages = $this->ob_m->get_pages();
-        $this->catalog_type = $this->ob_m->get_catalog_type();
+       // $this->news = $this->ob_m->get_news();
+       // $this->pages = $this->ob_m->get_pages();
+        //$this->catalog_type = $this->ob_m->get_catalog_type();
         $this->catalog_brands = $this->ob_m->get_catalog_brands();
 
-        $this->header_menu = $this->ob_m->get_header_menu();
+        //$this->header_menu = $this->ob_m->get_header_menu();
 
     }
     protected function output(){//метод генерирует шаблон и выводит его на экран
 
-        if($this->home_page)
+
             $this->left_bar = $this->render(VIEW.'left_bar',array(
 
                     'brands'=>$this->catalog_brands
@@ -65,7 +67,7 @@ abstract class Base extends Base_Controller{
             'title'=>$this->title,
             'keywords'=>$this->keywords,
             'description'=>$this->description,
-            'pages'=>$this->pages,
+            //'pages'=>$this->pages,
         ));//указываем путь к шаблону шапки сайта
 
 

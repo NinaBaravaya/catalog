@@ -5,10 +5,10 @@
 							+375 (17) <span>220-73-64</span><br />
 							+375 (17) <span>328-15-01</span> 
 						</div>
-						<p><a href="#">Главная</a>
+						<p><a href="<?=SITE_URL;?>">Главная</a>
 					</div>
 					<div class="copy">
-						© 2008-2009. ООО “ПромСтройЭнерго”<br />
+						© 2008-2009. ООО “Каталог бытовой техники”<br />
 						Все права защищены.<br />
 						E-mail:<a href="mailto: info@pse.by">info@pse.by</a>
 					</div>

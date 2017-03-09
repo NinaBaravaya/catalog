@@ -27,7 +27,8 @@ class Route_Controller extends Base_Controller {
 
             $url = explode('/',rtrim($this->request_url,'/'));
 
-            if (!empty($url[0])) {
+
+                if (!empty($url[0])) {
                 $this->controller = ucfirst($url[0]).'_Controller';
             }
             else {
