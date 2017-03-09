@@ -29,6 +29,11 @@
 
         <div id="header_right">
             <p>Вход для администратора</p><br/>
+            <p>
+                <? if($error):?>
+                    <?=$error;?>
+                <? endif;?>
+            </p>
             <form action='<?=SITE_URL?>login' method='post'>
                 <span>Логин:</span>
                 <input type='text' name = 'name'>

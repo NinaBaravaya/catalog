@@ -2,6 +2,7 @@
 abstract class Base_Admin extends Base_Controller{
     protected $ob_m;//в данном свойстве будем хранить объект модели сайта
    protected $ob_us;//Объект модели класса Model_User
+    protected $brands;
     protected $title;//сво-во хранит заголовок страниц
     protected $style;
     protected $script;
@@ -24,6 +25,7 @@ abstract class Base_Admin extends Base_Controller{
         }
         $this->ob_m = Model::get_instance();//получим об-к класса
         $this->ob_us = Model_User::get_instance();//получим об-к класса
+        $this->brands = $this->ob_m->get_catalog_brands();
     }
     protected function output()//возвращ польностью готовую страницу для вывода
     {
@@ -34,7 +36,7 @@ abstract class Base_Admin extends Base_Controller{
                                               'scripts'=>$this->script
         ));
 
-        $left_bar = $this->render(VIEW.'admin/left_bar');//параметры не нужны так как выводится статическое меню
+        $left_bar = $this->render(VIEW.'admin/left_bar',array('brands' => $this->brands,));//параметры не нужны так как выводится статическое меню
 
         $footer=$this->render(VIEW.'admin/footer');
 

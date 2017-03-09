@@ -11,10 +11,6 @@ abstract class Base extends Base_Controller{
     protected $left_bar;//свойство ля хранения левого блока
     protected $right_bar;//для хранения правого блока
     protected $footer;
-   // protected $need_right_side = FALSE;//нужна ли правая часть сайта
-   // protected $home_page = FALSE;//признак того, что страница главная
-
-    //protected $news,$pages,$catalog_type;
 
     protected $catalog_brands,$keywords,$description;//свойство хранит массив новостей, котор. выбрали из бд
     //$pages свойство хранит массив страниц, котор. выбрали из бд
@@ -35,31 +31,17 @@ abstract class Base extends Base_Controller{
 
         //получение Object Model
         $this->ob_m = Model::get_instance();
-       // $this->news = $this->ob_m->get_news();
-       // $this->pages = $this->ob_m->get_pages();
-        //$this->catalog_type = $this->ob_m->get_catalog_type();
         $this->catalog_brands = $this->ob_m->get_catalog_brands();
-
-        //$this->header_menu = $this->ob_m->get_header_menu();
 
     }
     protected function output(){//метод генерирует шаблон и выводит его на экран
-
-
             $this->left_bar = $this->render(VIEW.'left_bar',array(
-
                     'brands'=>$this->catalog_brands
                 )
             );
 
-
-
         $this->footer = $this->render(VIEW.'footer',array(
-                                                 // 'pages'=>$this->pages
-            //'home_page'=>$this->home_page
         ));
-
-
 
         $this->header = $this->render(VIEW.'header', array(
             'styles'=>$this->style,
@@ -67,16 +49,14 @@ abstract class Base extends Base_Controller{
             'title'=>$this->title,
             'keywords'=>$this->keywords,
             'description'=>$this->description,
-            //'pages'=>$this->pages,
+
         ));//указываем путь к шаблону шапки сайта
 
 
 
         $page = $this->render(VIEW.'index',array('header' => $this->header,
-
                                                   'left_bar' => $this->left_bar,
                                                   'content' => $this->content,
-                                                  /*'right_bar' => $this->right_bar,*/
                                                   'footer' => $this->footer
                                                  ));
         return $page;//возвращаем полностью готовую страницу

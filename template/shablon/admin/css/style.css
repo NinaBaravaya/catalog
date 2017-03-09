@@ -124,5 +124,37 @@
 }
 /*Стили для страницы авторизации*/
 .autoriz{
-	padding:20px 30px;
+	padding:40px 30px;
 }
+
+/*Стили для меню админки*/
+
+.adm_menu {
+	list-style: none; /*убираем маркеры списка*/
+	padding-top: 50px; /*убираем левый отступ, равный 40px*/
+	width: 550px;
+	margin: 0 auto;
+	/*border: 1px solid red;*/
+
+}
+.adm_menu a {
+	text-decoration: none; /*убираем подчеркивание текста ссылок*/
+
+}
+.adm_menu li {
+	display: inline-block;
+	padding: 0 15px;
+}
+.adm_menu a:hover {
+	color: #f70211;
+}
+/*Стили для меню админки*/
+
+/*Стили для кпонок редактирования в админке*/
+.button-catalog-adm img {
+	margin: 0 10px 0 17px;
+}
+img {
+	border: 0 none;
+}
+/*Стили для кпонок редактирования в админке*/

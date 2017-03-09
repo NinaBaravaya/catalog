@@ -1,21 +1,10 @@
-<div class="footer-main">
-				<div class="footer">
-					<div class="ftrMenu">
-						<div class="phone">
-							+375 (17) <span>220-73-64</span><br />
-							+375 (17) <span>328-15-01</span> 
-						</div>
-						<p><a href="<?=SITE_URL;?>">Главная</a>
-					</div>
-					<div class="copy">
-						© 2008-2009. ООО “Каталог бытовой техники”<br />
-						Все права защищены.<br />
-						E-mail:<a href="mailto: info@pse.by">info@pse.by</a>
-					</div>
-				</div>
-			</div>	
-	</div>
+<div id="templatemo_footer">
+	<center>
+		Copyright © 2018 Your Company Name | Designed by Free CSS Templates</a>
+	</center>
+</div> <!-- END of footer -->
+
 </div>
-</div>
+
 </body>
 </html>
