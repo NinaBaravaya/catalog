@@ -73,6 +73,7 @@ protected function input($param = array())
 }
     protected function output()
     {
+        //$this->content = $this->render(VIEW.'login_page',array('error'=>$_SESSION['auth']));
         $this->content = $this->render(VIEW.'login_page',array('error'=>$_SESSION['auth']));
         $this->page = parent::output();
         unset($_SESSION['auth']);

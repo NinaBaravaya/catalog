@@ -28,18 +28,6 @@
         <div id="site_title"><h1><a href="<?=SITE_URL;?>">бытовой техники</a></h1></div>
 
         <div id="header_right">
-            <p>Вход для администратора</p><br/>
-            <p>
-                <? if($error):?>
-                    <?=$error;?>
-                <? endif;?>
-            </p>
-            <form action='<?=SITE_URL?>login' method='post'>
-                <span>Логин:</span>
-                <input type='text' name = 'name'>
-                <span>Пароль:</span>
-                <input type='password' name ='password'>
-                <input class="submit_login" type='submit' name='submit' value ='Войти'><br/>
-            </form>
+            <a href="<?=SITE_URL;?>login">Вход для администратора</a><br/>
         </div> <!-- END -->
     </div> <!-- END of header -->

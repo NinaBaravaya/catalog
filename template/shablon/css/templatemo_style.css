@@ -90,9 +90,9 @@ h6 { font-size: 12px; margin: 0 0 5px; padding: 0; }
 }
 
 #sidebar {
-	float: left; 
-	width: 200px;
-	padding: 20px 30px 0 10px;
+	float: left;
+	width: 212px;
+	padding: 20px 18px 0 10px;
 }
 #sidebar p a{
 	font-size: 11px;
@@ -100,11 +100,18 @@ h6 { font-size: 12px; margin: 0 0 5px; padding: 0; }
 	margin: 0;
 	padding: 2px 0 2px 0;
 }
+
+#sidebar p a:hover{
+	font-size: 11px;
+	border-bottom: 1px dotted #ccc;
+	margin: 0!important;
+	padding: 2px 0 2px 0!important;
+}
 #content {
 	float: right;
 	width: 700px;
-	width: 700px;
-	padding: 20px 10px 20px;
+
+	padding: 5px 10px 20px;
 }
 
 #templatemo_footer {
@@ -117,8 +124,11 @@ h6 { font-size: 12px; margin: 0 0 5px; padding: 0; }
 #site_title h1 { margin: 0; padding: 0 }
 #site_title h1 a { display: block; width: 120px; padding: 35px 0 0 85px; font-size: 12px; color: #999; text-align: left; background: url(../images/templatemo_logo.png) no-repeat top left }
 
-#header_right { float: right; display: inline-block;	 padding-top: 20px; }
-
+#header_right { float: right; display: inline-block;	/* padding-top: 20px;*/
+	padding:50px 30px;}
+#header_right a{
+	color: red;
+}
 #language { margin: 0; padding: 0; list-style: none }
 #language li { float: right; display: block; margin-left: 5px }
 
@@ -306,3 +316,4 @@ table td { border-bottom: 1px solid #ccc }
 .col_23 { width: 620px }
 
 .no_margin_right { margin-right: 0 }
+

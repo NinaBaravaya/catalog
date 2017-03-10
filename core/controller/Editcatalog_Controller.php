@@ -2,7 +2,7 @@
 class Editcatalog_Controller extends Base_Admin {
 
     protected $option = 'view';
-    //protected $brands;
+    protected $brands;
     protected $id;//идентификатор категории parent либо brands
     protected $catalog;
     protected $navigation;
@@ -16,7 +16,7 @@ class Editcatalog_Controller extends Base_Admin {
     protected function input($param = array()) {
         parent::input();
         $this->title .= " Админка - каталог";
-        //$this->brands = $this->ob_m->get_catalog_brands();
+        $this->brands = $this->ob_m->get_catalog_brands();
 
         if(isset($param['page'])) {
             $page = $this->clear_int($param['page']);
@@ -151,7 +151,7 @@ class Editcatalog_Controller extends Base_Admin {
                         exit();
                     }
 
-                    $img_types = array('jpeg' => 'image/jpeg');
+                    $img_types = array('jpeg' => 'image/jpeg','png' => 'image/png');
                     $this->type_img = array_search($_FILES['img']['type'],$img_types);
                     if(!$this->type_img) {
                         $_SESSION['message'] = "Не правильный формат изображения";
@@ -253,7 +253,7 @@ class Editcatalog_Controller extends Base_Admin {
 
         $this->content = $this->render(VIEW.'admin/edit_catalog',array(
             'option' => $this->option,
-            //'brands' => $this->brands,
+            'brands' => $this->brands,
             'category'=>$this->id,
             'goods' => $this->catalog,
             'navigation'=>$this->navigation,
