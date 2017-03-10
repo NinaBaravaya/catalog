@@ -1,8 +1,8 @@
 <div class="content autoriz">
 
-	<h2>
+	<h3>
 		Авторизация для администратора
-	</h2>
+	</h3>
 	<p>
 	<? if($error):?>
 		<?=$error;?>

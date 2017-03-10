@@ -195,6 +195,9 @@ abstract class Base_Controller
             case 'jpeg':
                 $img_id = imageCreateFromJpeg($dest);
                 break;
+            case 'png':
+                $img_id = imageCreateFromPng($dest);
+                break;
         }
 
         ///$img_id = imageCreateFromJpeg($dest);

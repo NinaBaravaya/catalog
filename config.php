@@ -42,8 +42,8 @@ define("VARNING_TIME",3000);
 //массив доп настроек
 $conf = array(
     'styles' => array(
+        'css/style.css',
         'css/templatemo_style.css',
-        'css/styles.css',
         'css/error.css',
     ),
     'scripts' => array(

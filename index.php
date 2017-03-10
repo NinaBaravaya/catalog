@@ -18,11 +18,7 @@ set_include_path(get_include_path()//чтобы не прописать полн
     .PATH_SEPARATOR.LIB
 );
 
-function __autoload($class_name) {
-
-    if(strpos($class_name,"PHPExcel") === 0) {
-        return;
-    }
+spl_autoload_register(function($class_name) {
 
     if(!include_once ($class_name.".php")) {
 
@@ -33,7 +29,7 @@ function __autoload($class_name) {
             echo $e->getMessage();
         }
     }
-}
+});
 try{
     $obj = Route_Controller::get_instance();
     $obj->route();
