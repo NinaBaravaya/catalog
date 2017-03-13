@@ -35,7 +35,7 @@ define('FEALT',1);//кол-во дней, на которое будет заб�
 define("VERSION", '110');//версия файла кук, которые мы создаем
 define("KEY","GDSHG4385743HGSDHdkfgjdfk4653475JSGHDJSDSKJDF476354");
 define("EXPIRATION",6000);//время после которого пользовтелю необходимо переавторизироваться
-define("VARNING_TIME",3000);
+define("WARNING_TIME",3000);
 
 ////////////////////////безопасноть сайта
 
@@ -43,8 +43,7 @@ define("VARNING_TIME",3000);
 $conf = array(
     'styles' => array(
         'css/style.css',
-        'css/templatemo_style.css',
-        'css/error.css',
+        'css/templatemo_style.css'
     ),
     'scripts' => array(
         'js/jquery-1.7.2.min.js',
@@ -61,4 +60,4 @@ $conf = array(
         'js/tiny_mce/tiny_mce.js',
         'js/tiny_script.js'
     ),
-);//будем программно(автоматически ) подключать скрипты js
+);//для програм. подключение скриптов js

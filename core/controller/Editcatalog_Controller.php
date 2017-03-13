@@ -1,4 +1,5 @@
 <?php
+defined('PROM') or exit('Access denied');
 class Editcatalog_Controller extends Base_Admin {
 
     protected $option = 'view';
@@ -8,7 +9,6 @@ class Editcatalog_Controller extends Base_Admin {
     protected $navigation;
     protected $message;
     protected $type;//тип категории: brand либо parent
-   // protected $type_cat;//массив всех типов товароа
     protected $tovar;//массив дан по выбр товару
     protected $tovar_id;//id товара
     protected $type_img;//тии изображения
@@ -32,8 +32,6 @@ class Editcatalog_Controller extends Base_Admin {
 
             $this->id = $this->clear_int($param['brand']);
             $this->type = 'brand';
-            //print_r($this->type);
-            //exit();
             $pager = new Pager(
                 $page,
                 'tovar',
@@ -77,7 +75,6 @@ class Editcatalog_Controller extends Base_Admin {
 
         if($param['option'] == 'add') {
             $this->option = 'add';
-            //$this->type_cat = $this->ob_m->get_catalog_type();
 
             if($param['id']) {//идентификатор категории
                 $this->id = $this->clear_int($param['id']);
@@ -86,18 +83,14 @@ class Editcatalog_Controller extends Base_Admin {
 
        if($param['option'] == 'edit') {
 
-           // $this->type_cat = $this->ob_m->get_catalog_type();
+
             if($param['tovar']) {//проверяем пришел ли id товара
                 $this->tovar_id = $this->clear_int($param['tovar']);
                 $this->tovar = $this->ob_m->get_tovar_adm($this->tovar_id);
                 $this->option = 'edit';
-
-
-                //print_r($this->tovar);//массив данных по редактируемому товару
-                //print_r($this->type_cat);//массив всех категорий
-               // exit();
             }
         }
+
 /////////Действия//////////////
         if($param['option'] == 'delete') {//УДАЛЕНИЕ ТОВАРА
             if($param['tovar']) {//есть id товара
@@ -124,8 +117,6 @@ class Editcatalog_Controller extends Base_Admin {
         }
 
         if($this->is_post()) {
-//print_r($_POST);
-            //exit();
             $id = $this->clear_int($_POST['id']);
             $title = $_POST['title'];
             $anons = $_POST['anons'];
@@ -138,7 +129,6 @@ class Editcatalog_Controller extends Base_Admin {
             $category = $_POST['category'];//тип категории товара
 
             if(!empty($title) && !empty($anons) && !empty($text) && !empty($price)) {
-
 
                 if(empty($_FILES['img']['tmp_name'])) {
                     $img = NOIMAGE;
@@ -259,7 +249,6 @@ class Editcatalog_Controller extends Base_Admin {
             'navigation'=>$this->navigation,
             'previous'=>$previous,
             'mes'=>$this->message,
-           // 'type_cat' => $this->type_cat,//чтобы заполнить список типов
             'tovar' => $this->tovar//подставить данные в поля при редактировании
         ));
 

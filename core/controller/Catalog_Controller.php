@@ -1,4 +1,5 @@
 <?php
+defined('PROM') or exit('Access denied');
 class Catalog_Controller extends Base{
 
     protected $type = FALSE;//тип товара по назначению(type) или бренд(brand)
@@ -11,10 +12,8 @@ class Catalog_Controller extends Base{
   protected function input($param = array())//параметры для навигации и не только пост данные
   {
       parent::input();
-      //$this->home_page = TRUE;
-      $this->title .= "Каталог";
-      //$this->need_right_side = FALSE;//скрываем right_bar.php
 
+      $this->title .= "Каталог";
 
       if(isset($param['brand'])){//код для принятия параметра brand/2
         $this->type = "brand";
@@ -27,7 +26,6 @@ class Catalog_Controller extends Base{
           $this->id = $this->clear_int($param['parent']);
       }
 
-//принятие номера страницы для оторажения
         if(isset($param['page'])){
         $page = $this->clear_int($param['page']);
             if($page == 0){
@@ -39,12 +37,9 @@ class Catalog_Controller extends Base{
 
 
       if($this->type){
-
           if(!$this->id){
             return;
           }
-
-
        $pager = new Pager(//параметры для конструктора класса Pager
                 $page,
                 'tovar',
@@ -56,16 +51,10 @@ class Catalog_Controller extends Base{
        );
 
           $this->krohi = $this->ob_m->get_krohi($this->type,$this->id);//метод вернет массив хлебных крошек
-          //print_r($this->krohi);
-
           $this->keywords = $this->krohi[0][$this->type.'_name'].','.$this->krohi[1]['brand_name'];
           $this->description = $this->krohi[0][$this->type.'_name'].','.$this->krohi[1]['brand_name'];
 
-
-
-
-      }  //в параметре $this->type хранится "type", во втором параметре идентификатор категории
-
+      }
 
       elseif($this->parent){
           if(!$this->id){
@@ -91,7 +80,6 @@ class Catalog_Controller extends Base{
 
           $this->type = "parent";
          $this->krohi = $this->ob_m->get_krohi('brand',$this->id);//вывод хлебных крошек для "все типы"
-
           $this->keywords = $this->krohi[0]['brand_name'];
           $this->description = $this->krohi[0]['brand_name'];
 
@@ -117,11 +105,7 @@ class Catalog_Controller extends Base{
       if(is_object($pager)){
           $this->navigation = $pager->get_navigation();
           $this->catalog = $pager->get_posts();
-          //var_dump($this->catalog);
       }
-
-
-
   }
     protected function output()
     {

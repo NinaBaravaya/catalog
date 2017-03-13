@@ -1,8 +1,6 @@
 <?php
-
 defined('PROM') or exit('Access denied');
-
-class DbException extends Exception {
+class DbException extends Exception {//контроллер обрабатывает ошибки возникающие в Model_Driver
 
     protected $message;
 

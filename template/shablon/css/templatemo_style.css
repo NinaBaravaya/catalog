@@ -32,7 +32,7 @@ cite a, cite a:link, cite a:visited  { font-size: 12px; text-decoration: none; f
 cite span { font-weight: 400; color: #333; }
 
 .tmo_list { margin: 10px 0 10px 0; padding: 0; list-style: none }
-.tmo_list li { color:#636363; margin: 0 0 5px 0; padding: 0 0 0 20px; background: url(../images/templatemo_list.png) no-repeat scroll 0 7px  }
+.tmo_list li { color:#636363; margin: 0 0 5px 0; padding: 0 0 0 20px;  }
 .tmo_list li a { color: #636363; font-weight: normal }
 .tmo_list li a:hover { color: #000 }
 
@@ -132,11 +132,6 @@ h6 { font-size: 12px; margin: 0 0 5px; padding: 0; }
 #language { margin: 0; padding: 0; list-style: none }
 #language li { float: right; display: block; margin-left: 5px }
 
-#templatemo_search { clear: both; margin-top: 5px; width: 232px; height: 31px; background: url(../images/templatemo_searchbox.png) }
-#templatemo_search form {
-	margin: 0;
-	padding: 0;
-}
 
 #templatemo_search .txt_field {
 	float: left;
@@ -211,7 +206,6 @@ h6 { font-size: 12px; margin: 0 0 5px; padding: 0; }
 .sidebar_menu li {
 	margin: 0;
 	padding: 2px 0 3px 15px;
-	background: url(../images/templatemo_list_01.png) no-repeat scroll 0 8px;
 	border-bottom: 1px dotted #ccc
 }
 
@@ -255,7 +249,6 @@ table td { border-bottom: 1px solid #ccc }
 .add_to_cart {
 	display: inline-block;
 	padding-right: 30px;
-	background: url(../images/cart.png) no-repeat right center	
 }
 
 #newsletter {
@@ -283,14 +276,6 @@ table td { border-bottom: 1px solid #ccc }
 	color: #fff;
 	border: none;
 }
-
-#contact_form { padding: 0; width: 282px; margin-bottom: 40px }
-#contact_form form { margin: 0px; padding: 0px; }
-#contact_form form .input_field { width: 220px; padding: 5px; color: #666;  background: #fff; border: 1px solid #dedede; 	font-family: Tahoma, Geneva, sans-serif; font-size: 12px; margin-top: 3px;}
-
-#contact_form form label { display: block; width: 100px; margin-right: 12px; font-size: 11px }
-#contact_form form textarea { width: 270px; height: 150px; padding: 5px; color: #666; background: #fff; border: 1px solid #dedede; font-family: Tahoma, Geneva, sans-serif; font-size: 12px; margin-top: 3px;}
-#contact_form form .submit_btn { display: block; padding: 5px 12px; text-align: center; text-decoration: none; font-weight: bold;  background-color: #555; border: 1px solid #000; color: #fff; font-size:11px; cursor: pointer }
 
 .footer_menu {
 	margin: 0;

@@ -1,34 +1,25 @@
 <?php
-
+defined('PROM') or exit('Access denied');
 class Model
 {
-    //сделаем данный класс по шаблону проектирования Singleton
-    //чтобы исключить создание множества объектов у одного класса
+    //класс по шаблону проектирования Singleton
     static $instance;
 
     public $ins_driver;//свойство будет хранить объект класса Model_Driver
-    //свойство публичное,чтобы мы могли иметь к нему доступ из модели Model
 
-    //
     static function get_instance()
     {
-        if (self::$instance instanceof self) {//проверяем,если в свойстве $instance,записам объект класса model
-            return self::$instance;//то вернем объект класса Model
-        } else {//если нет, то создадим объект класса Model
+        if (self::$instance instanceof self) {
+            return self::$instance;
+        } else {
             return self::$instance = new self;
         }
     }
 
-    //создадим констрктор вызовется автоматически при создании объекта класса
-
     private function __construct()
     {
-        //логичнее всего при создании объекта выполнить подключение к бд
-        //поэтому создадим объект класса model_driver, а он подключиться к бд
-
-        try {//делаем обработку ошибок при соединени с бд
-            $this->ins_driver = Model_Driver::get_instance();//обратимся к свойству ins_driver
-            //и сохраним в него объект класса Model_Driver
+        try {
+            $this->ins_driver = Model_Driver::get_instance();
 
         } catch (DbException $e) {
             exit();
@@ -37,9 +28,8 @@ class Model
 
     }
 
-
     public function get_catalog_brands()
-    {//метод получит производителей товаров
+    {//метод вернет производителей товаров
         $result = $this->ins_driver->select(
             array('brand_id', 'brand_name', 'parent_id'),
             'brands'
@@ -51,14 +41,11 @@ class Model
             } else {
                 //Дочерняя
                 $arr[$item['parent_id']]['next_lvl'][$item['brand_id']] = $item['brand_name'];//ключ массива id родит категории
-                //дописываем в родит ячейку дочернююкаетгорию с ключом next_lvl
+                //дописываем в родит ячейку дочернюю категорию с ключом next_lvl
             }
         }
         return $arr;
     }
-
-
-
 
     public function get_child($id)
     {//метод вернет все товары дочерних категорий
@@ -70,12 +57,11 @@ class Model
 
         if ($result) {
             $row = array();
-            foreach ($result as $item) {//ошибка появлялась так как $result == FALSE
+            foreach ($result as $item) {
                 $row[] = $item['brand_id'];
 
             }
             $row[] = $id;
-
             //склеим массив дочерних категорий в строку
             $res = implode(",", $row);
 
@@ -86,7 +72,6 @@ class Model
 
     }
 
-
 //метод будет работать напрямую с классом model_driver
     public function get_krohi($type, $id)
     {
@@ -96,7 +81,7 @@ class Model
               WHERE type_id = $id";
         }
         if ($type == 'brand') {//если мы работаем с товарами по назначению
-            //во втором подзапросе вытаскиваем родит категорию у этой дочерней категории
+            //во втором подзапросе вытаскиваем родит категорию у данной дочерней категории
             $sql = "(SELECT brand_id, brand_name
               FROM brands
               WHERE brand_id = (SELECT parent_id
@@ -135,10 +120,6 @@ class Model
         );
         return $result[0];
     }
-
-
-
-
 
     public function get_parent_brands()
     {
@@ -189,7 +170,6 @@ class Model
         );
         return $result[0];
     }
-
 
     public function edit_goods($id, $title, $anons, $text, $img, $publish, $price, $category, $keywords, $description)
     {
@@ -265,7 +245,7 @@ class Model
         } else {
             return $result;
         }
-    }//т.е.после того как удалили категорию установим товарам это йкатегорий brand_id = 0
+    }//т.е.после того как удалили категорию установим товарам этой категорий brand_id = 0
 
 }
 

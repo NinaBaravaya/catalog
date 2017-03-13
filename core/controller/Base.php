@@ -1,7 +1,7 @@
 <?php
-//так как объект класса нам не нужен пишем слово abstract
+defined('PROM') or exit('Access denied');
 abstract class Base extends Base_Controller{
-    protected $ob_m;//объект модели нашего сайта
+    protected $ob_m;//объект модели сайта
     protected $title;//заголовок каждой страницы
     protected $style;//стили,которые необходимо подключить к сайту
     protected $script;//готовые пути для скриптов
@@ -12,10 +12,7 @@ abstract class Base extends Base_Controller{
     protected $right_bar;//для хранения правого блока
     protected $footer;
 
-    protected $catalog_brands,$keywords,$description;//свойство хранит массив новостей, котор. выбрали из бд
-    //$pages свойство хранит массив страниц, котор. выбрали из бд
-
-
+    protected $catalog_brands,$keywords,$description;//свойство хранит массив категорий, котор. выбрали из бд
 
     protected function input(){//метод формирует входные параметры для генерации страницы
     $this->title = "Каталог бытовой техники | ";
@@ -23,11 +20,9 @@ abstract class Base extends Base_Controller{
         foreach($this->styles as $style){//подключаем стили к странице
             $this->style[] = SITE_URL.VIEW.$style;
         }
-        //print_r($this->style);//Array ( [0] => /template/default/style.css )
-        foreach($this->scripts as $script){//подключаем стили к странице
+        foreach($this->scripts as $script){//подключаем скрипты к странице
             $this->script[] = SITE_URL.VIEW.$script;
         }
-        //print_r($this->script);
 
         //получение Object Model
         $this->ob_m = Model::get_instance();
@@ -51,8 +46,6 @@ abstract class Base extends Base_Controller{
             'description'=>$this->description,
 
         ));//указываем путь к шаблону шапки сайта
-
-
 
         $page = $this->render(VIEW.'index',array('header' => $this->header,
                                                   'left_bar' => $this->left_bar,

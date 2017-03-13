@@ -1,5 +1,4 @@
 <div class="content autoriz">
-
 	<h3>
 		Авторизация для администратора
 	</h3>

@@ -26,9 +26,7 @@ class Pager{
                         $match = array()
                          )
     {
-        $this->page = $page;//записываем параметры в свойства, чтобы передавать их методам Pager
-        //чтобы они стали параметрами методов для выводи массива запрошенных контроллеров данных и
-        //и формирования для соотв контроллера постраничной навигации
+        $this->page = $page;
         $this->tablename = $tablename;
         $this->where = $where;
         $this->order = $order;
@@ -51,19 +49,18 @@ class Pager{
                 $this->where,
                 $this->order,
                 $this->napr,
-                FALSE,//параметр Limit нам не нужен
+                FALSE,//параметр Limit не нужен
                 $this->operand,
                 $this->match
             );//$this->db в данном свойство находится объект класса Model_Driver
-            $this->total_count = $result[0]['count'];//общее кол-во записей в бд 33
+            $this->total_count = $result[0]['count'];//общее кол-во записей в бд
         }
         return $this->total_count;//то вернем существ сво-во
 
     }
 
     //метод вернет массив данных для вывода на экран
-    ///сформ 3 записи и выведен на экран
-    public function get_posts(){//возвращает массив данных, которые необходимо выводить на экране
+    public function get_posts(){
         $total_post = $this->get_total();//сохр. в премен кол-во данных для вывода на экран
 
          $number_pages = (int)($total_post/$this->post_number);//кол-во страниц для вывода данных
@@ -76,7 +73,7 @@ class Pager{
            return FALSE;
          }
 
-        //выбираем данные
+
         //формируем переменную start в зависимости от текущей страницы
         $start = ($this->page - 1)*$this->post_number;//$this->page текущая страница
         //$this->page - 1 так как индекс с нуля в бд
@@ -86,7 +83,7 @@ class Pager{
                          $this->where,
             $this->order,
             $this->napr,
-            $start.','.$this->post_number,//формируем параметр LIMIT c 0 3 записи
+            $start.','.$this->post_number,//формируем параметр LIMIT
             $this->operand,
             $this->match
         );//$this->db в данном свойство находится объект класса Model_Driver
@@ -110,7 +107,7 @@ public function get_navigation(){
 
 
     }
-    //формируем массив постраничной навигации (для вывода в шаблоне архива, каталога товаров или пиоиска по сайту)
+    //формируем массив постраничной навигации (для вывода в шаблоне архива, каталога товаров или поиска по сайту)
     $result = array();
     if($this->page != 1){//если текущая стр не первая
         $result['first'] =1;
@@ -119,17 +116,10 @@ public function get_navigation(){
     }
     if($this->page > $this->number_link + 1 ){//откидываем лишнюю стра-у
         //формируем ссылки слева
-        //больше ли текущая страница,
-        // чем кол-во ссылок по обеим сторонам от
-        //текущей страницы
 
-        //т.е. текущая страницы близко от начала
         for($i=$this->page - $this->number_link; $i < $this->page; $i++ ){
-            //цикл будет откидывать более 3-ч страниц слева от текущей
             $result['previous'][] = $i;
         }
-
-
 
     }else{
         for( $i=1; $i<$this->page; $i++ ){//1<2, для 2 запишем в ячейку единицу
@@ -141,11 +131,9 @@ public function get_navigation(){
 //выведем тек стр-у
     $result['current'] = $this->page;
 
-
-
     if($this->page + $this->number_link < $number_pages){//проверяем на  тек стр =1
       for($i = $this->page + 1; $i <= $this->page + $this->number_link; $i++){
-       $result['next'][] = $i;//отсекаем ненужные страницы т.е. текущая страницы далеко от конца
+       $result['next'][] = $i;//убираем ненужные страницы справа от текущей
 
       }
     }else{
