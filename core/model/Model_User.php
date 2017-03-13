@@ -1,10 +1,11 @@
 <?php
+defined('PROM') or exit('Access denied');
 //класс по шаблону singleton
 class Model_User{
     static $instance;
     static $cookie_name = 'USERNAME';//имя файла куки
 
-    protected $ins_driver_u;//в данное сво-во б сохрвнят ьоб-кт класса Model_Driver
+    protected $ins_driver_u;//в данное сво-во б сохранять об-кт класса Model_Driver
     protected $user_id;//сво-ство хранит id пользователя
  protected $glue = "|";//склеиватель массива
 
@@ -17,7 +18,7 @@ class Model_User{
 /////////шифров/////////
 
     static function get_instance(){
-        if(self::$instance instanceof self){//проверяем,если в свойстве $instance,записам объект класса model
+        if(self::$instance instanceof self){//проверяем,если в свойстве $instance,записам объект класса Model
             return self::$instance;//то вернем объект класса Model
         }else{//если нет, то создадим объект класса Model
             return self::$instance = new self;
@@ -61,7 +62,7 @@ class Model_User{
         return $result[0]['fealtures'];
     }
 
-    public function insert_fealt($ip){//метод встаит 1 при неправильно введ данных пользователем
+    public function insert_fealt($ip){//метод впишет 1 при неправильно введ данных пользователем
         $this->ins_driver_u->insert(//$this->ins_driver_u - объект класса Model_Driver
             'fealtures',
             array('fealtures','ip','time'),
@@ -167,7 +168,7 @@ class Model_User{
     }
 
     public function validate_cookie() {//сверяем куки
-        //$this->user_id = FALSE;//тогда выкинет на стр авторизации
+        //$this->user_id = FALSE;//тогда перейдем на стр авторизации
         if(!$this->user_id || !$this->version || !$this->created) {
             throw new AuthException("Не правильные данные. Доступ запрещен");
         }
@@ -179,7 +180,7 @@ class Model_User{
         if((time() - $this->created) > EXPIRATION) {//если прошло 10 минут от момента установки кук
             throw new AuthException("Закончилось время сессии");
         }
-        if((time() - $this->created) > VARNING_TIME) {//обновление файла кук, чтобы устанавливалось новое время установки кук
+        if((time() - $this->created) > WARNING_TIME) {//обновление файла кук, чтобы устанавливалось новое время установки кук
             $this->set();//устанавливаем заново куки
         }
 

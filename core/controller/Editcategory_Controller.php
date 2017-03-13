@@ -1,8 +1,7 @@
 <?php
-
+defined('PROM') or exit('Access denied');
 class Editcategory_Controller extends Base_Admin
 {
-    //protected $brands;//массив категорий (древовидный массив справа)
     protected $parents_cat;//массив родительсикх категорий
     protected $message;//массив системных сообщений
     protected $option = 'add';//действие, которое должен выполнит ьконтроллер
@@ -86,18 +85,13 @@ class Editcategory_Controller extends Base_Admin
             }
         }
 
-        //$this->brands = $this->ob_m->get_catalog_brands();//массив родит и дочерних категорий
         $this->parents_cat = $this->ob_m->get_parent_brands();//метод возвращ родит категории
-        //print_r( $this->parents_cat);
-
         $this->message = $_SESSION['message'];
-
     }
 
     protected function output()//возвращ польностью готовую страницу для вывода
     {
         $this->content = $this->render(VIEW . 'admin/edit_category', array(
-            //'brands' => $this->brands,
             'parents_cat' => $this->parents_cat,
             'mes' => $this->message,
             'option' => $this->option,

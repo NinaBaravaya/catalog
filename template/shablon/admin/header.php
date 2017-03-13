@@ -18,8 +18,6 @@
 <title><?=$title;?></title>
 </head>
 
-
-
 <body id="home">
 <div id="templatemo_wrapper">
 	<div id="templatemo_header">

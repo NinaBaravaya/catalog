@@ -1,14 +1,14 @@
 <?php
+defined('PROM') or exit('Access denied');
 abstract class Base_Admin extends Base_Controller{
-    protected $ob_m;//в данном свойстве будем хранить объект модели сайта
-   protected $ob_us;//Объект модели класса Model_User
+    protected $ob_m;//свойство хранит объект модели сайта
+   protected $ob_us;//свойство хранит объект модели класса Model_User
     protected $brands;
     protected $title;//сво-во хранит заголовок страниц
     protected $style;
     protected $script;
-    protected $content;//сгенериров шаблон центр+ прав часть
+    protected $content;//сгенериров шаблон центр части
     protected $user = TRUE;//нужно ли авторизиров пользователям на сайте
-
 
     protected function input()//метод для подготовки входных данных
     {
@@ -36,18 +36,17 @@ abstract class Base_Admin extends Base_Controller{
                                               'scripts'=>$this->script
         ));
 
-        $left_bar = $this->render(VIEW.'admin/left_bar',array('brands' => $this->brands,));//параметры не нужны так как выводится статическое меню
+        $left_bar = $this->render(VIEW.'admin/left_bar',array('brands' => $this->brands,));//получаем массив $brands для left_bar
 
         $footer=$this->render(VIEW.'admin/footer');
 
-        //генерируем весь полный шаблон
+        //генерируем весь шаблон
         $page = $this->render(VIEW.'admin/index',array(
             'header'=>$header,
             'left_bar'=>$left_bar,
             'content'=>$this->content,//заполняется в дочерних классах дан класса
             'footer'=>$footer
         ));
-
         return $page;//готовая страница
     }
 }
